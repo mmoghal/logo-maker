@@ -25,6 +25,7 @@
     "url": "https://github.com/mmoghal/logo-maker/issues"
   },
   "homepage": "https://github.com/mmoghal/logo-maker#readme",
+  "type": "module",
   "dependencies": {
     "inquirer": "^9.2.0"
   },
