@@ -29,71 +29,17 @@ function writeToFile(fileName, answers) {
   });
 }
 
+function promptUser() {
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        message:
+          "Select the text you would like to display in the logo (Enter up to three characters)",
+        name: "text",
+      },
 
-      type: 'input',
-      name: 'color',
-      message: 'Enter a color keyword (or a hexadecimal number):',
-      validate: function (value) {
-        const valid =
-          /^#?([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/.test(value) ||
-          /(red|orange|yellow|green|blue|purple|pink|black|white)/.test(value);
-        return valid || 'Please enter a valid color.';
-      },
-    },
-    {
-      type: 'list',
-      name: 'shape',
-      message: 'Select a shape:',
-      choices: ['Circle', 'Square', 'Triangle'],
-    },
-    {
-      type: 'input',
-      name: 'shapeColor',
-      message: 'Enter a color keyword (or a hexadecimal number) for the shape:',
-      validate: function (value) {
-        const valid =
-          /^#?([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/.test(value) ||
-          /(red|orange|yellow|green|blue|purple|pink|black|white)/.test(value);
-        return valid || 'Please enter a valid color.';
-      },
-    },
-    {
-      type: 'input',
-      name: 'radius',
-      message: 'Enter the radius of the circle (in pixels):',
-      when: function (answers) {
-        return answers.shape === 'Circle';
-      },
-      validate: function (value) {
-        const valid = /^[1-9]\d*$/.test(value);
-        return valid || 'Please enter a positive integer.';
-      },
-    },
-    {
-      type: 'input',
-      name: 'sideLength',
-      message: 'Enter the length of a side of the square (in pixels):',
-      when: function (answers) {
-        return answers.shape === 'Square';
-      },
-      validate: function (value) {
-        const valid = /^[1-9]\d*$/.test(value);
-        return valid || 'Please enter a positive integer.';
-      },
-    },
-    {
-      type: 'input',
-      name: 'height',
-      message: 'Enter the height of the triangle (in pixels):',
-      when: function (answers) {
-        return answers.shape === 'Triangle';
-      },
-      validate: function (value) {
-        const valid = /^[1-9]\d*$/.test(value);
-        return valid || 'Please enter a positive integer.';
-      },
-    },
-  ])
+   
   .then((answers) => {
     let shape;
     switch (answers.shape) {
