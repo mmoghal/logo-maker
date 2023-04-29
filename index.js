@@ -35,42 +35,38 @@ function promptUser() {
       {
         type: "input",
         message:
-          "Select the text you would like to display in the logo (Enter up to three characters)",
+          "Select the text to appear on your logo (up to three characters):",
         name: "text",
       },
+      {
+        type: "input",
+        message:
+        "Choose the color of your logo text (Enter color keyword OR a hexadecimal number):",
+        name: "textColor",
+      },
+      {
+        type: "list",
+        message: "Select the shape to render in your logo:",
+        choices: ["Triangle", "Square", "Circle"],
+        name: "shape",
+      },
+      {
+        type: "input",
+        message:
+          "Choose the color of the logo shape (Enter color keyword OR a hexadecimal number):",
+        name: "shapeBackgroundColor",
+      },
+    ])
+    .then((answers) => {
+      if (answers.text.length > 3) {
+        console.log("Must enter a value of no more than 3 characters");
+        promptUser();
+      } else {
+        writeToFile("logo.svg", answers);
+      }
+    });
+}
 
+promptUser();
    
-  .then((answers) => {
-    let shape;
-    switch (answers.shape) {
-      case 'Circle':
-        shape = new Circle(answers.shapeColor, parseInt(answers.radius));
-        break;
-      case 'Square':
-        shape = new Square(answers.shapeColor, parseInt(answers.sideLength));
-        break;
-      case 'Triangle':
-        shape = new Triangle(answers.shapeColor, parseInt(answers.height));
-        break;
-    }
-
-    const svgString = `<svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
-      ${shape.render()}
-      <text x="50%" y="50%" text-anchor="middle" font-size="50" fill="${answers.color}">
-        ${answers.text}
-      </text>
-      </svg>`;
-
-    fs.writeFile('output.svg', svgString, (err) => {
-      if (err) throw err;
-      console.log('SVG file has been saved!');
-    });
-
-    fs.writeFile('logo.svg', svgString, (err) => {
-      if (err) throw err;
-      console.log('Generated logo.svg');
-    });
-  })
-  .catch((error) => {
-    console.log(error);
-  });
+  
