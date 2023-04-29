@@ -1,6 +1,6 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-const { Circle, Square, Triangle } = require("./lib/Shape");
+const { Triangle, Square, Circle } = require("./lib/Shape");
 
 function writeToFile(fileName, answers) {
   let logoSVG = "";
