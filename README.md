@@ -34,7 +34,7 @@ This will start the application and prompt you for input to generate a logo. Fol
 ## Live Demonstration of Application Functionality
 
 To see the application in action, check out this 
-https://drive.google.com/file/d1uvBw25WFhREOWwK2lHkmcScqDdG2alzk/view
+https://drive.google.com/file/d/1uvBw25WFhREOWwK2lHkmcScqDdG2alzk/view
 
 
 ## Sample Logos Created with the Application
