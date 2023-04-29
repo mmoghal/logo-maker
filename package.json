@@ -5,8 +5,7 @@
   "main": "index.js",
   "directories": {
     "example": "examples",
-    "lib": "lib",
-    "test": "test"
+    "lib": "lib"
   },
   "scripts": {
     "test": "npm test"
@@ -25,7 +24,6 @@
     "url": "https://github.com/mmoghal/logo-maker/issues"
   },
   "homepage": "https://github.com/mmoghal/logo-maker#readme",
-  "type": "module",
   "dependencies": {
     "inquirer": "^9.2.0"
   },
