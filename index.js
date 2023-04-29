@@ -1,6 +1,7 @@
 import inquirer from 'inquirer';
 import fs from 'fs';
-import { Circle, Square, Triangle } from './lib.js';
+import { Circle, Square, Triangle } from './lib/index.js';
+
 
 inquirer
   .prompt([
