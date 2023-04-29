@@ -29,18 +29,7 @@ function writeToFile(fileName, answers) {
   });
 }
 
-inquirer
-  .prompt([
-    {
-      type: 'input',
-      name: 'text',
-      message: 'Enter up to three characters:',
-      validate: function (value) {
-        const valid = /^[a-zA-Z]{0,3}$/.test(value);
-        return valid || 'Please enter up to three letters.';
-      },
-    },
-    {
+
       type: 'input',
       name: 'color',
       message: 'Enter a color keyword (or a hexadecimal number):',
