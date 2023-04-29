@@ -1,6 +1,6 @@
-import inquirer from 'inquirer';
-import fs from 'fs';
-import { Circle, Square, Triangle } from './lib/index.js';
+const inquirer = require("inquirer");
+const fs = require("fs");
+const { Circle, Square, Triangle } = require("./lib/Shape");
 
 
 inquirer
