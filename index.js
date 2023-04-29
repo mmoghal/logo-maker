@@ -25,7 +25,12 @@ function writeToFile(fileName, answers) {
   logoSVG += "</svg>";
 
   fs.writeFile(fileName, logoSVG, (err) => {
-    err ? console.log(err) : console.log("Generated logo.svg");
+    if (err) {
+      console.log("Error occurred while generating the logo SVG file.");
+      console.log(err);
+    } else {
+      console.log(`Generated ${fileName}`);
+    }
   });
 }
 
@@ -41,7 +46,7 @@ function promptUser() {
       {
         type: "input",
         message:
-        "Choose the color of your logo text (Enter color keyword OR a hexadecimal number):",
+          "Choose the color of your logo text (Enter color keyword OR a hexadecimal number):",
         name: "textColor",
       },
       {
@@ -56,17 +61,27 @@ function promptUser() {
           "Choose the color of the logo shape (Enter color keyword OR a hexadecimal number):",
         name: "shapeBackgroundColor",
       },
+      {
+        type: "input",
+        message: "Enter a file name for your logo:",
+        name: "fileName",
+        validate: function (input) {
+          if (input.length > 0 && !input.includes("/")) {
+            return true;
+          } else {
+            return "Please enter a valid file name.";
+          }
+        },
+      },
     ])
     .then((answers) => {
       if (answers.text.length > 3) {
         console.log("Must enter a value of no more than 3 characters");
         promptUser();
       } else {
-        writeToFile("logo.svg", answers);
+        writeToFile(answers.fileName, answers);
       }
     });
 }
 
 promptUser();
-   
-  
