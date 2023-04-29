@@ -33,20 +33,21 @@ This will start the application and prompt you for input to generate a logo. Fol
 
 ## Live Demonstration of Application Functionality
 
-https://drive.google.com/file/d/1uvBw25WFhREOWwK2lHkmcScqDdG2alzk/view
+To see the application in action, check out this 
+https://drive.google.com/file/d1uvBw25WFhREOWwK2lHkmcScqDdG2alzk/view
 
 
 ## Sample Logos Created with the Application
 
-![alt Image of the application](https://github.com/mmoghal/logo-maker/blob/main/assets/images/Shape.test.js.png)
+![alt Image of the application](https://github.com/mmoghal/logo-maker/blob/main/assets/images/cir.png)
 
 
-![alt Image of the application](https://github.com/mmoghal/logo-maker/blob/main/assets/images/circle.svg.png)
+![alt Image of the application](https://github.com/mmoghal/logo-maker/blob/main/assets/images/sq.png)
 
-![alt Image of the application](https://github.com/mmoghal/logo-maker/blob/main/assets/images/Shape.test.js.png)
+![alt Image of the application](https://github.com/mmoghal/logo-maker/blob/main/assets/images/tri.png)
 
 
-## Running tests
+## Running Tests
 
 To run the unit tests for this application, navigate to the root directory of the project in your terminal and run the following command:
 
