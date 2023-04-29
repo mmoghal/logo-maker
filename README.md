@@ -44,6 +44,7 @@ https://drive.google.com/file/d/1uvBw25WFhREOWwK2lHkmcScqDdG2alzk/view
 
 ![alt Image of the application](https://github.com/mmoghal/logo-maker/blob/main/assets/images/sq.png)
 
+
 ![alt Image of the application](https://github.com/mmoghal/logo-maker/blob/main/assets/images/tri.png)
 
 
